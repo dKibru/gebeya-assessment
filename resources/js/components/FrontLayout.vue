@@ -10,12 +10,12 @@
                     <!-- Brand .//end -->
 
                     <!-- Search -->
-                    <div class="flex flex-nowrap items-center w-full order-last md:order-none mt-5 md:mt-0 md:w-2/4 lg:w-2/4">
-                        <input class="flex-grow appearance-none border border-gray-200 bg-gray-100 rounded-md mr-2 py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400" type="text" placeholder="Search">
-                        <button type="button" class="px-4 py-2 inline-block text-white border border-transparent bg-blue-600 text-white rounded-md hover:bg-blue-700">
-                            Search
-                        </button>
-                    </div>
+<!--                    <div class="flex flex-nowrap items-center w-full order-last md:order-none mt-5 md:mt-0 md:w-2/4 lg:w-2/4">-->
+<!--                        <input class="flex-grow appearance-none border border-gray-200 bg-gray-100 rounded-md mr-2 py-2 px-3 hover:border-gray-400 focus:outline-none focus:border-gray-400" type="text" placeholder="Search">-->
+<!--                        <button type="button" class="px-4 py-2 inline-block text-white border border-transparent bg-blue-600 text-white rounded-md hover:bg-blue-700">-->
+<!--                            Search-->
+<!--                        </button>-->
+<!--                    </div>-->
                     <!-- Search .//end -->
 
                     <!-- Actions -->
@@ -28,7 +28,7 @@
                             <i class="text-gray-400 w-5 fa fa-user-clock"></i>
                             <span class="hidden lg:inline ml-1">Logout</span>
                         </Link>
-                        <Link class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="/cart">
+                        <Link v-if="$page.props.auth.cart.length" class="px-3 py-2 inline-block text-center text-gray-700 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:border-gray-300" href="/cart">
                             <i class="text-gray-400 w-5 fa fa-shopping-cart"></i>
                             <span class="hidden lg:inline ml-1">My cart  ( {{$page.props.auth.cart.length}} ) </span>
                         </Link>

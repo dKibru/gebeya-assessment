@@ -30,7 +30,7 @@ class LoginController extends Controller
             ]);
             $u = $request->only('name', 'email', 'password');
             $u['password'] = \Hash::make($u['password']);
-            $u['role'] = $request['is_supplier'] ? "client" : "user";
+            $u['role'] = $request['client'] ? "client" : "user";
             $user = User::create($u);
             \Auth::login($user);
             if($user->role == "user")

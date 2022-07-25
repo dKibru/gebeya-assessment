@@ -20,8 +20,8 @@ function currentBackMenu($user) {
             [ 'label' => 'Dashboard', 'url' => url('/home'), 'icon' => 'fa-user' ],
             [ 'label' => 'Products', 'url' => url('/admin/products') , 'icon' => 'fa-user'],
 //            [ 'label' => 'Categories', 'url' => url('/admin/categories') , 'icon' => 'fa-user'],
-            [ 'label' => 'Orders', 'url' => url('/admin/orders') , 'icon' => 'fa-user'],
-            [ 'label' => 'Clients', 'url' => url('/admin/clients') , 'icon' => 'fa-user'],
+//            [ 'label' => 'Orders', 'url' => url('/admin/orders') , 'icon' => 'fa-user'],
+            [ 'label' => 'Clients ( stores )', 'url' => url('/admin/clients') , 'icon' => 'fa-user'],
             [ 'label' => 'Users', 'url' => url('/admin/users') , 'icon' => 'fa-user'],
         ];
     }elseif ($role == "client"){

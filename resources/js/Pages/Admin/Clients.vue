@@ -16,11 +16,11 @@
                 <table class="w-full whitespace-no-wrap">
                     <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left uppercase bg-gray-200">
-                        <th class="px-3 py-3" width="400">Client</th>
+                        <th class="px-3 py-3" width="200">Client</th>
                         <th class="px-3 py-3">Amount</th>
                         <th class="px-3 py-3">Status</th>
                         <th class="px-3 py-3">Date</th>
-                        <th class="px-3 py-3 text-right" width="100">Manage</th>
+                        <th class="px-3 py-3 text-right" width="200">Manage</th>
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y">

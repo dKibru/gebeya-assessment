@@ -1,16 +1,16 @@
 [
     { "category_id" : 1, "name" :  "Item A",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/1.jpg", "client_id" : 1  },
-    { "category_id" : 2, "name" :  "Item B",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/2.jpg", "client_id" : 1  },
-    { "category_id" : 3, "name" :  "Item C",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/3.jpg", "client_id" : 2  },
-    { "category_id" : 4, "name" :  "Item D",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/4.jpg", "client_id" : 2  },
-    { "category_id" : 5, "name" :  "Item E",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/5.jpg", "client_id" : 3  },
-    { "category_id" : 6, "name" :  "Item F",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/6.jpg", "client_id" : 3  },
-    { "category_id" : 7, "name" :  "Item G",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/7.jpg", "client_id" : 4  },
+    { "category_id" : 2, "name" :  "Item B",  "price" : 19.99, "qtty" : 1 , "img" :  "/images/items/2.jpg", "client_id" : 1  },
+    { "category_id" : 3, "name" :  "Item C",  "price" : 12.00, "qtty" : 1 , "img" :  "/images/items/3.jpg", "client_id" : 2  },
+    { "category_id" : 4, "name" :  "Item D",  "price" : 120.00, "qtty" : 1 , "img" :  "/images/items/4.jpg", "client_id" : 2  },
+    { "category_id" : 5, "name" :  "Item E",  "price" : 20.99, "qtty" : 1 , "img" :  "/images/items/5.jpg", "client_id" : 3  },
+    { "category_id" : 6, "name" :  "Item F",  "price" : 29.99, "qtty" : 1 , "img" :  "/images/items/6.jpg", "client_id" : 3  },
+    { "category_id" : 7, "name" :  "Item G",  "price" : 50.00, "qtty" : 1 , "img" :  "/images/items/7.jpg", "client_id" : 4  },
     { "category_id" : 8, "name" :  "Item H",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/8.jpg", "client_id" : 4  },
-    { "category_id" : 1, "name" :  "Item I",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/9.jpg", "client_id" : 1  },
-    { "category_id" : 2, "name" :  "Item J",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/10.jpg", "client_id" : 1  },
-    { "category_id" : 3, "name" :  "Item K",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/11.jpg", "client_id" : 2  },
-    { "category_id" : 4, "name" :  "Item L",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/12.jpg", "client_id" : 2  },
-    { "category_id" : 5, "name" :  "Item M",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/13.jpg", "client_id" : 3  },
-    { "category_id" : 6, "name" :  "Item N",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/14.jpg", "client_id" : 3  }
+    { "category_id" : 1, "name" :  "Item I",  "price" : 12.12, "qtty" : 1 , "img" :  "/images/items/9.jpg", "client_id" : 1  },
+    { "category_id" : 2, "name" :  "Item J",  "price" : 45.00, "qtty" : 1 , "img" :  "/images/items/10.jpg", "client_id" : 1  },
+    { "category_id" : 3, "name" :  "Item K",  "price" : 450.00, "qtty" : 1 , "img" :  "/images/items/11.jpg", "client_id" : 2  },
+    { "category_id" : 4, "name" :  "Item L",  "price" : 100.00, "qtty" : 1 , "img" :  "/images/items/12.jpg", "client_id" : 2  },
+    { "category_id" : 5, "name" :  "Item M",  "price" : 99.99, "qtty" : 1 , "img" :  "/images/items/13.jpg", "client_id" : 3  },
+    { "category_id" : 6, "name" :  "Item N",  "price" : 12.99, "qtty" : 1 , "img" :  "/images/items/14.jpg", "client_id" : 3  }
 ]

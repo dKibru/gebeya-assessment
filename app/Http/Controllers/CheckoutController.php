@@ -21,8 +21,6 @@ class CheckoutController extends Controller
     public function store(Request $request)
     {
 
-        return back()->with('checkout','Thank you for the purchase. You will receive your item soon');
-
         $request->validate([
            'first_name' => 'required',
             'term' => 'accepted',

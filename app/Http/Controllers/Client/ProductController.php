@@ -51,7 +51,7 @@ class ProductController
             'name' => 'required',
             'price' => 'required',
             'qtty' => 'required',
-            'categories' => 'required'
+//            'categories' => 'required'
         ]);
 
         $img = $request->file('pic')->storePublicly('products');
@@ -62,7 +62,8 @@ class ProductController
                 'img' => route('media',['path' => $img]),
                 'client_id' => $client->id,
             ]);
-            $p->categories()->attach( array_values($request['categories']));
+            if($request['categories'])
+                $p->categories()->attach( array_values($request['categories']));
 
         });
 

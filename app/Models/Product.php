@@ -28,7 +28,24 @@ class Product extends Model
         );
     }
 
-    protected $appends = ['url'];
+    protected function urls(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value, $attributes){
+                $urls = [];
+                foreach ($this->categories as $c){
+                    $urls[] = route('product.show',['client_id' => $this->client->slug, 'category_id' => $c->slug , 'product_id' => $this->slug ]);
+                }
+                if(sizeof($urls) == 0){
+                    $urls[] = route('product.show2',['client_id' => $this->client->slug, 'product_id' => $this->slug ]);
+                }
+
+                return $urls;
+            }
+        );
+    }
+
+    protected $appends = ['url', 'urls'];
 
     public function category(){
         return $this->belongsTo(Category::class,  'category_id');

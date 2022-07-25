@@ -18,8 +18,6 @@ class Product extends Model
 
     protected function url(): Attribute
     {
-
-
         return Attribute::make(
             get: function ($value, $attributes){
                 $url = route('product.show2',['client_id' => $this->client->slug, 'product_id' => $this->slug ]);
@@ -34,6 +32,11 @@ class Product extends Model
 
     public function category(){
         return $this->belongsTo(Category::class,  'category_id');
+    }
+
+    public function categories()
+    {
+        return $this->hasManyThrough(Category::class, ProductCategory::class, 'category_id', 'id');
     }
 
     public function client(){

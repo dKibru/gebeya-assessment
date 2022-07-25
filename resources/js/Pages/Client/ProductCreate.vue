@@ -34,16 +34,19 @@
                         <div class="text-red-500" v-if="errors.pic">{{ errors.pic }}</div>
                     </div>
 
-<!--                    <div class="mb-4">-->
-<!--                        <label class="block mb-1"> Name </label>-->
-<!--                        <Multiselect-->
-<!--                            v-model="form.categories"-->
-<!--                            label="name"-->
-<!--                            id="id"-->
-<!--                            :options="categories"-->
-<!--                        />-->
-<!--                        <div class="text-red-500" v-if="errors.name">{{ errors.name }}</div>-->
-<!--                    </div>-->
+                    <div class="mb-4">
+                        <label class="block mb-1"> Categories </label>
+                        <Multiselect
+                            v-model="form.categories"
+                            label="name"
+                            id="id"
+                            mode="tags"
+                            searcheable="true"
+                            :value="[]"
+                            :options="categories"
+                        />
+                        <div class="text-red-500" v-if="errors.categories">{{ errors.categories }}</div>
+                    </div>
 
 
 <!--                    <label class="flex items-center w-max mb-5">-->

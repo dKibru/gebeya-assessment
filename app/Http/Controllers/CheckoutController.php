@@ -60,7 +60,7 @@ class CheckoutController extends Controller
         });
 
 
-        return back()->with('message','Thank you for the purchase. You will receive your item soon');
+        return back()->with('checkout','Thank you for the purchase. You will receive your item soon');
 
     }
 }

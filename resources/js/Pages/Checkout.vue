@@ -46,7 +46,8 @@
 
                         <article class="border border-gray-200 bg-white shadow-sm rounded p-4 lg:p-6 mb-5">
 
-                            <h2 class="text-xl font-semibold mb-5">Guest checkout</h2>
+                            <h2 class="text-xl font-semibold mb-5" v-if="$page.props.auth.user">Checkout</h2>
+                            <h2 class="text-xl font-semibold mb-5" v-else>Guest Checkout</h2>
 
                             <div class="grid grid-cols-2 gap-x-3">
                                 <div class="mb-4">

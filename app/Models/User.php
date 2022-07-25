@@ -59,6 +59,8 @@ class User extends Authenticatable
         );
     }
 
+    protected $appends = ['url'];
+
 
     public function categories()
     {

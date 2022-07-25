@@ -23,6 +23,7 @@ function currentBackMenu($user) {
 //            [ 'label' => 'Orders', 'url' => url('/admin/orders') , 'icon' => 'fa-user'],
             [ 'label' => 'Clients ( stores )', 'url' => url('/admin/clients') , 'icon' => 'fa-user'],
             [ 'label' => 'Users', 'url' => url('/admin/users') , 'icon' => 'fa-user'],
+            [ 'label' => 'Admins', 'url' => url('/admin/admins') , 'icon' => 'fa-user'],
         ];
     }elseif ($role == "client"){
         return [

@@ -36,6 +36,7 @@ Route::middleware(['auth', 'role:client,admin'])->group(function(){
 
 
         Route::get('/admin/clients', [\App\Http\Controllers\Admin\ClientsController::class, 'index'])->name('admin.clients');
+        Route::post('/admin/client/{id}/delete', [\App\Http\Controllers\Admin\ClientsController::class, 'delete'])->name('admin.clients.delete');
         Route::get('/admin/users', [\App\Http\Controllers\Admin\UsersController::class, 'index'])->name('admin.users');
         Route::get('/admin/products', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('admin.products');
     });

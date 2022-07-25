@@ -1,0 +1,10 @@
+[
+    { "client_id" : 1, "name" : "Electronics", "show_on_navbar" : 1 },
+    { "client_id" : 1, "name" : "Fashion", "show_on_navbar" : 1 },
+    { "client_id" : 2, "name" : "Health & Beauty", "show_on_navbar" : 1 },
+    { "client_id" : 2, "name" : "Home & Garden", "show_on_navbar" : 1 },
+    { "client_id" : 3, "name" : "Sports", "show_on_navbar" : 1 },
+    { "client_id" : 3, "name" : "Art", "show_on_navbar" : 1 },
+    { "client_id" : 4, "name" : "Industrial Equipment", "show_on_navbar" : 1 },
+    { "client_id" : 4, "name" : "Motors", "show_on_navbar" : 1 }
+]

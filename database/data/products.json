@@ -1,0 +1,16 @@
+[
+    { "category_id" : 1, "name" :  "Laptop A",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/1.jpg", "client_id" : 1  },
+    { "category_id" : 2, "name" :  "Laptop B",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/2.jpg", "client_id" : 1  },
+    { "category_id" : 3, "name" :  "Laptop C",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/3.jpg", "client_id" : 2  },
+    { "category_id" : 4, "name" :  "Laptop D",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/4.jpg", "client_id" : 2  },
+    { "category_id" : 5, "name" :  "Laptop E",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/5.jpg", "client_id" : 3  },
+    { "category_id" : 6, "name" :  "Laptop F",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/6.jpg", "client_id" : 3  },
+    { "category_id" : 7, "name" :  "Laptop G",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/7.jpg", "client_id" : 4  },
+    { "category_id" : 8, "name" :  "Laptop H",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/8.jpg", "client_id" : 4  },
+    { "category_id" : 1, "name" :  "Laptop I",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/9.jpg", "client_id" : 1  },
+    { "category_id" : 2, "name" :  "Laptop J",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/10.jpg", "client_id" : 1  },
+    { "category_id" : 3, "name" :  "Laptop K",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/11.jpg", "client_id" : 2  },
+    { "category_id" : 4, "name" :  "Laptop L",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/12.jpg", "client_id" : 2  },
+    { "category_id" : 5, "name" :  "Laptop M",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/13.jpg", "client_id" : 3  },
+    { "category_id" : 6, "name" :  "Laptop N",  "price" : 9.99, "qtty" : 1 , "img" :  "/images/items/14.jpg", "client_id" : 3  }
+]

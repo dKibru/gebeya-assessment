@@ -1,0 +1,15 @@
+[
+    { "name": "clienta", "email": "clienta@gmail.com", "role" : "client" },
+    { "name": "clientb", "email": "clientb@gmail.com", "role" : "client" },
+    { "name": "clientc", "email": "clientc@gmail.com", "role" : "client" },
+    { "name": "clientd", "email": "clientd@gmail.com", "role" : "client" },
+    { "name": "cliente", "email": "cliente@gmail.com", "role" : "client" },
+    { "name": "clientf", "email": "clientf@gmail.com", "role" : "client" },
+    { "name": "usera", "email": "usera@gmail.com", "role" : "user" },
+    { "name": "userb", "email": "userb@gmail.com", "role" : "user" },
+    { "name": "userc", "email": "userc@gmail.com", "role" : "user" },
+    { "name": "userd", "email": "userd@gmail.com", "role" : "user" },
+    { "name": "usere", "email": "usere@gmail.com", "role" : "user" },
+    { "name": "userf", "email": "userf@gmail.com", "role" : "user" },
+    { "name": "admin", "email": "admin@admin.com", "role" : "admin" }
+]

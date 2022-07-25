@@ -3,10 +3,10 @@
         <section class="container p-6 mx-auto">
 
             <h1 class="mb-4 text-xl md:text-2xl font-semibold text-black">
-                Users
-                <button class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
+                Admins
+                <Link href="/admin/admins/create" class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
                     <i class="fa fa-plus-circle"></i>
-                </button>
+                </Link>
             </h1>
 
 
@@ -23,7 +23,7 @@
                     </thead>
                     <tbody class="bg-white divide-y">
 
-                    <tr class="text-gray-700 dark:text-gray-400" v-for="c in users.data">
+                    <tr class="text-gray-700 dark:text-gray-400" v-for="c in admins.data">
                         <td class="px-3 py-3">
                             <div class="flex items-center leading-tight">
                                 <div class="mr-3 hidden md:block flex-shrink-0">
@@ -64,14 +64,31 @@
 
 <script>
     import BackLayout from "../../components/BackLayout.vue";
+    import { Link } from '@inertiajs/inertia-vue3'
+    import {reactive} from "vue";
+    import {Inertia} from "@inertiajs/inertia";
     export default {
+        setup () {
+            const form = reactive({
+                email: null,
+                password: null
+            })
+
+            function submit() {
+                Inertia.post('/login', form)
+            }
+
+            return { form, submit }
+        },
         name: "AdminUsers",
         components : {
-            BackLayout
+            BackLayout,
+            Link
         },
         props : {
             menu : Array,
-            users : Array
+            admins : Array,
+            errors: Object
         }
     }
 </script>

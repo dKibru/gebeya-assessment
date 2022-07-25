@@ -4,9 +4,6 @@
 
             <h1 class="mb-4 text-xl md:text-2xl font-semibold text-black">
                 Products
-                <button class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
-                    <i class="fa fa-plus-circle"></i>
-                </button>
             </h1>
 
 

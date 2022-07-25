@@ -1,0 +1,1 @@
+import{B as e}from"./BackLayout.90984c3e.js";import{_ as n}from"./_plugin-vue_export-helper.cdc0426e.js";import{a as t,o as r,c}from"./app.fe1ca048.js";const s={name:"Dashboard",components:{BackLayout:e},props:{menu:Array}};function m(p,u,o,_,f,d){const a=t("BackLayout");return r(),c(a,{menu:o.menu},null,8,["menu"])}const k=n(s,[["render",m]]);export{k as default};

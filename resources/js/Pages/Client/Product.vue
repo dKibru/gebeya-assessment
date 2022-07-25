@@ -41,9 +41,11 @@
                             $ {{c.price/100}}
                         </td>
                         <td class="px-3 py-3">
-              <span v-if="c.category" class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
-                {{c.category.name}}
-              </span>
+                            <div v-if="c.categories.length">
+                              <span v-for="cc in c.categories"  class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+                                {{cc.name}}
+                              </span>
+                            </div>
                         </td>
                         <td class="px-3 py-3">
                             {{c.created_at}}

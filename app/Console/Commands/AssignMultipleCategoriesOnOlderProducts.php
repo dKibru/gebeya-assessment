@@ -32,13 +32,14 @@ class AssignMultipleCategoriesOnOlderProducts extends Command
         $this->comment('fixing ...');
 
         $products = Product::all();
+//        dd($products->last()->categories);
+
         foreach ($products as $product){
             $category_id = $product->category_id;
             $product_id = $product->id;
             $client_id = $product->client_id;
-            if($category_id){
-                ProductCategory::create(compact('category_id', 'product_id', 'client_id'));
-            }
+            $product->categories()->attach( [$category_id] );
+
         }
         return 0;
     }

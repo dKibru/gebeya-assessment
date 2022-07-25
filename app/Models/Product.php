@@ -36,7 +36,7 @@ class Product extends Model
 
     public function categories()
     {
-        return $this->hasManyThrough(Category::class, ProductCategory::class, 'category_id', 'id');
+        return $this->belongsToMany(Category::class, 'product_category');
     }
 
     public function client(){

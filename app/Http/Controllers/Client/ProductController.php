@@ -14,7 +14,7 @@ class ProductController
 {
     public function index(){
         $client = currentClient();
-        $clients = \App\Models\Product::where('client_id', $client->id)->orderByDesc('id')->paginate();
+        $clients = \App\Models\Product::where('client_id', $client->id)->with('categories')->orderByDesc('id')->paginate();
         return Inertia::render('Client/Product', [
             'menu' => currentBackMenu($client),
 //            'products' => $products,
@@ -62,19 +62,10 @@ class ProductController
                 'img' => route('media',['path' => $img]),
                 'client_id' => $client->id,
             ]);
-            foreach ($request['categories'] as $c){
-                ProductCategory::create([
-                    'product_id' => $p->id,
-                    'category_id' => $c,
-                    'client_id' => $client->id
-                ]);
-            }
+            $p->categories()->attach( array_values($request['categories']));
+
         });
 
-//        if($request['category_id']){
-//            $p->category_id = $request['category_id'];
-//            $p->save();
-//        }
         return redirect()->to(url('/client/products'));
     }
 }

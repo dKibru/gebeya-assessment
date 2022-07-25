@@ -1,0 +1,1 @@
+var n={};Object.defineProperty(n,"__esModule",{value:!0});var i=n.clickOutSide={mounted:function(t,c,d){t.clickOutsideEvent=function(e){t==e.target||t.contains(e.target)||c.value(e,t)},document.addEventListener("click",t.clickOutsideEvent)},unmounted:function(t){document.removeEventListener("click",t.clickOutsideEvent)}},o=n.default=i;export{o as _};

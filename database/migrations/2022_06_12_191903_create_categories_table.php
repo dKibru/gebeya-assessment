@@ -22,14 +22,14 @@ return new class extends Migration
             $table->unsignedBigInteger('parent_id')->nullable();
 
             $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('users');
+            $table->foreign('client_id')->references('id')->onDelete('cascade')->on('users');
 
             $table->boolean('show_on_navbar')->default(true);
 
             $table->timestamps();
         });
         Schema::table('categories', function (Blueprint $table) {
-            $table->foreign('parent_id')->references('id')->on('categories');
+            $table->foreign('parent_id')->references('id')->onDelete('cascade')->on('categories');
         });
     }
 

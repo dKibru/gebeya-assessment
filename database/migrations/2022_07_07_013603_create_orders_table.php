@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('status')->default('paid');
             $table->integer('total_price');
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->onDelete('cascade')->on('users');
 
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

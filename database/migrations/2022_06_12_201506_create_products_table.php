@@ -25,11 +25,11 @@ return new class extends Migration
             $table->string('img');
 
             $table->unsignedBigInteger('client_id');
-            $table->foreign('client_id')->references('id')->on('users');
+            $table->foreign('client_id')->references('id')->onDelete('cascade')->on('users');
 
 
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->onDelete('cascade')->on('categories');
 
             $table->timestamps();
         });

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
 
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')->references('id')->onDelete('cascade')->on('orders');
 
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->onDelete('cascade')->on('products');
 
             $table->integer('qtty');
             $table->integer('single_price');

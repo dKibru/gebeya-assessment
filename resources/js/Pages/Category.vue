@@ -115,82 +115,66 @@
                         </a>
 
                         <div class="hidden md:block px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
-                            <h3 class="font-semibold mb-2">Category</h3>
+                            <h3 class="font-semibold mb-2">Category </h3>
 
                             <ul class="text-gray-500 space-y-1">
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Electronics </a></li>
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Watches </a></li>
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Cinema </a></li>
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Clothes </a></li>
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Home items </a></li>
-                                <li><a class="hover:text-blue-600 hover:underline" href="#">Smartwatches </a></li>
-                            </ul>
-
-                            <hr class="my-4">
-
-                            <h3 class="font-semibold mb-2">Filter by</h3>
-                            <ul class="space-y-1">
-                                <li>
+                                <li v-for="m in menu">
                                     <label class="flex items-center">
-                                        <input name="" type="checkbox" checked="" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Samsung </span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="" type="checkbox" checked="" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Huawei </span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="" type="checkbox" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Tesla model </span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="" type="checkbox" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Best brand </span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="" type="checkbox" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Other brands </span>
+                                        <input v-model="filterCategories" :value="m.id" type="checkbox"  class="h-4 w-4">
+                                        <span class="ml-2 text-gray-500"> {{m.name}} </span>
                                     </label>
                                 </li>
                             </ul>
 
                             <hr class="my-4">
 
-                            <h3 class="font-semibold mb-2">Sort by</h3>
+                            <h3 class="font-semibold mb-2">Price range</h3>
                             <ul class="space-y-1">
                                 <li>
                                     <label class="flex items-center">
-                                        <input name="myselection" type="radio" checked="" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Lightblue </span>
+                                        <span class="ml-2 text-gray-500 mr-4"> Min. Price </span>
+                                        $<input v-model="min_price" type="number" checked="" class="h-8 px-2 w-20 border-gray-600 bg-gray-200">
                                     </label>
                                 </li>
                                 <li>
                                     <label class="flex items-center">
-                                        <input name="myselection" type="radio" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Orange </span>
+                                        <span class="ml-2 text-gray-500 mr-4"> Max Price </span>
+                                        $<input v-model="max_price" type="number" checked="" class="h-8 px-2 w-20 border-gray-600 bg-gray-200">
                                     </label>
                                 </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="myselection" type="radio" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Silver </span>
-                                    </label>
-                                </li>
-                                <li>
-                                    <label class="flex items-center">
-                                        <input name="myselection" type="radio" class="h-4 w-4">
-                                        <span class="ml-2 text-gray-500"> Darkblue </span>
-                                    </label>
-                                </li>
+
                             </ul>
+
+                            <hr class="my-4">
+
+                            <button v-on:click="filterRequest" type="submit" class="my-2 px-4 py-2 text-center w-full inline-block text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700"> Filter </button>
+<!--                            <h3 class="font-semibold mb-2">Sort by</h3>-->
+<!--                            <ul class="space-y-1">-->
+<!--                                <li>-->
+<!--                                    <label class="flex items-center">-->
+<!--                                        <input name="myselection" type="radio" checked="" class="h-4 w-4">-->
+<!--                                        <span class="ml-2 text-gray-500"> Lightblue </span>-->
+<!--                                    </label>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <label class="flex items-center">-->
+<!--                                        <input name="myselection" type="radio" class="h-4 w-4">-->
+<!--                                        <span class="ml-2 text-gray-500"> Orange </span>-->
+<!--                                    </label>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <label class="flex items-center">-->
+<!--                                        <input name="myselection" type="radio" class="h-4 w-4">-->
+<!--                                        <span class="ml-2 text-gray-500"> Silver </span>-->
+<!--                                    </label>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <label class="flex items-center">-->
+<!--                                        <input name="myselection" type="radio" class="h-4 w-4">-->
+<!--                                        <span class="ml-2 text-gray-500"> Darkblue </span>-->
+<!--                                    </label>-->
+<!--                                </li>-->
+<!--                            </ul>-->
                         </div>
                         <!-- filter wrap -->
 
@@ -206,9 +190,9 @@
                                         <img :src=product.img class="mx-auto mix-blend-multiply w-auto" height="240" alt="Product title here">
                                     </Link>
                                     <div class="pt-3">
-                                    <span v-on:click="addToMyCart(product)" class="cursor-pointer float-right px-3 py-2 text-gray-400 border border-gray-300 rounded-md hover:border-blue-400 hover:text-blue-600" >
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </span>
+<!--                                    <span v-on:click="addToMyCart(product)" class="cursor-pointer float-right px-3 py-2 text-gray-400 border border-gray-300 rounded-md hover:border-blue-400 hover:text-blue-600" >-->
+<!--                                        <i class="fa fa-shopping-cart"></i>-->
+<!--                                    </span>-->
                                         <p class="font-semibold">${{product.price/100}}</p>
                                         <h6>
                                             <a :href="product.url" class="text-gray-600 hover:text-blue-500">
@@ -238,14 +222,23 @@
 </template>
 
 <script>
-    import { Link } from '@inertiajs/inertia-vue3'
+    import {Link, useForm, usePage} from '@inertiajs/inertia-vue3'
     import clickOutSide from "@mahdikhashan/vue3-click-outside";
     import FrontLayout from "../components/FrontLayout.vue";
+    import {computed, reactive, ref} from "vue";
     export default {
         name: "Category",
         components: {
             Link,
             FrontLayout
+        },
+        setup (props) {
+
+            const cart0 = computed(() => usePage().props.value.category)
+            const filterCategories = ref([cart0.value.id])
+            // console.log({cart0: })
+
+            return { filterCategories }
         },
         directives : {
             clickOutSide
@@ -254,15 +247,27 @@
             products: Array,
             client: Object,
             menu: Array,
-            breadcrumb : Object
+            breadcrumb : Object,
+            // category : Object,
         },
+
         data: () => {
             return {
-                showModal: false
+                showModal: false,
+                min_price : null,
+                max_price : null
+
             }
         },
 
         methods: {
+            filterRequest : function(){
+                this.$inertia.post('/'+this.client.slug+'/', {
+                    categories : this.filterCategories,
+                    min_price : this.min_price,
+                    max_price : this.max_price,
+                })
+            },
             goBack : function (){
                 console.log("hey")
             },

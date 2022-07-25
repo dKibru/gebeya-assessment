@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\HomePageController::class, 'index']);
-Route::get('/test', [\App\Http\Controllers\HomePageController::class, 'test']);
+Route::post('/', [\App\Http\Controllers\HomePageController::class, 'filter']);
+
+//Route::get('/test', [\App\Http\Controllers\HomePageController::class, 'test']);
 
 
 Route::middleware(['auth', 'role:client,admin'])->group(function(){
@@ -85,3 +87,4 @@ Route::get('logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout
 
 
 Route::get('/{id}', [\App\Http\Controllers\HomePageController::class, 'show'])->name('client.home');
+Route::post('/{id}', [\App\Http\Controllers\HomePageController::class, 'filter_home'])->name('client.home.filter');

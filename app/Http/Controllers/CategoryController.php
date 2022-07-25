@@ -25,7 +25,8 @@ class CategoryController extends Controller
             'products' => $products,
             'client' => $client,
             'menu' => currentMenu($client->id),
-            'breadcrumb' => $breadcrumb
+            'breadcrumb' => $breadcrumb,
+            'category' => $category
         ]);
     }
 }

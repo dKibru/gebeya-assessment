@@ -175,49 +175,49 @@
                             {{product.name}}
                         </h2>
 
-                        <div class="flex flex-wrap items-center space-x-2 mb-2">
+<!--                        <div class="flex flex-wrap items-center space-x-2 mb-2">-->
 
-                            <img class="d-inline-block h-4" src="images/misc/stars-active.svg" alt="Rating">
-                            <span class="text-yellow-500">9.3</span>
+<!--                            <img class="d-inline-block h-4" src="images/misc/stars-active.svg" alt="Rating">-->
+<!--                            <span class="text-yellow-500">9.3</span>-->
 
-                            <svg width="6px" height="6px" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="3" cy="3" r="3" fill="#DBDBDB"></circle>
-                            </svg>
+<!--                            <svg width="6px" height="6px" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <circle cx="3" cy="3" r="3" fill="#DBDBDB"></circle>-->
+<!--                            </svg>-->
 
-                            <span class="text-gray-400">
-							<i class="fa fa-shopping-bag mr-2"></i> 154 orders
-						</span>
+<!--                            <span class="text-gray-400">-->
+<!--							<i class="fa fa-shopping-bag mr-2"></i> 154 orders-->
+<!--						</span>-->
 
-                            <svg width="6px" height="6px" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="3" cy="3" r="3" fill="#DBDBDB"></circle>
-                            </svg>
+<!--                            <svg width="6px" height="6px" viewBox="0 0 6 6" xmlns="http://www.w3.org/2000/svg">-->
+<!--                                <circle cx="3" cy="3" r="3" fill="#DBDBDB"></circle>-->
+<!--                            </svg>-->
 
-                            <span class="text-green-500">Verified</span>
+<!--                            <span class="text-green-500">Verified</span>-->
 
-                        </div>
+<!--                        </div>-->
 
-                        <p class="mb-4 font-semibold text-xl">$98.00
-                            <span class="text-base font-normal">/1 box</span>
+                        <p class="mb-4 font-semibold text-xl">${{product.price/100}}
+                            <span class="text-base font-normal"> </span>
                         </p>
 
-                        <p class="mb-4 text-gray-500">
-                            Virgil Abloh’s Off-White is a streetwear-inspired collection that
-                            continues to break away from the conventions of mainstream fashion. Made in Italy, these black and brown Odsy-1000 low-top sneakers.
+                        <p class="mb-4 text-gray-500 text-justify" >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lectus turpis, ornare id pharetra ut, elementum at risus. Aliquam ornare dui erat, et scelerisque ante placerat vel. Phasellus nec placerat quam, vel luctus nisi. Nulla viverra vitae lorem a lobortis. Sed arcu nisi, condimentum quis mi a, pharetra egestas enim.
                         </p>
 
 
-                        <ul class="mb-5">
-                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Model#:</b>
-                                <span class="text-gray-500">Odsy-1000</span>
-                            </li>
-                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Color:</b>
-                                <span class="text-gray-500">Brown</span>
-                            </li>
-                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Delivery:</b>
-                                <span class="text-gray-500">Russia, USA &amp; Europe</span></li>
-                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Color:</b>
-                                <span class="text-gray-500">Brown</span>
-                            </li>
+                        <ul class="mb-5 min-w-300">
+                            &nbsp;
+<!--                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Model#:</b>-->
+<!--                                <span class="text-gray-500">Odsy-1000</span>-->
+<!--                            </li>-->
+<!--                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Color:</b>-->
+<!--                                <span class="text-gray-500">Brown</span>-->
+<!--                            </li>-->
+<!--                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Delivery:</b>-->
+<!--                                <span class="text-gray-500">Russia, USA &amp; Europe</span></li>-->
+<!--                            <li class="mb-1"> <b class="font-medium w-36 inline-block">Color:</b>-->
+<!--                                <span class="text-gray-500">Brown</span>-->
+<!--                            </li>-->
                         </ul>
 
 

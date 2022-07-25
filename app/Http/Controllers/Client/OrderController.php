@@ -24,4 +24,32 @@ class OrderController
         ]);
     }
 
+    public function show($id)
+    {
+        $order = Order::with('details', 'details.product')->findOrFail($id);
+        return Inertia::render('Client/OrderSingle', [
+            'menu' => currentBackMenu(auth()->user()),
+            'order' => $order,
+//            'categories' => $clients,
+//            'menu' => currentMenu($client->id),
+//            'breadcrumb' => $breadcrumb
+        ]);
+    }
+
+    public function complete($id)
+    {
+        $order = Order::find($id);
+        $order->status = 'complete';
+        $order->save();
+        return redirect()->back();
+    }
+
+    public function cancel($id)
+    {
+        $order = Order::find($id);
+        $order->status = 'cancel';
+        $order->save();
+        return redirect()->back();
+    }
+
 }

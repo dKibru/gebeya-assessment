@@ -11,7 +11,7 @@ class ProductController
 
     public function index()
     {
-        $clients = \App\Models\Product::query()->orderByDesc('id')->paginate();
+        $clients = \App\Models\Product::query()->with('client')->orderByDesc('id')->paginate();
         return Inertia::render('Admin/Product', [
             'menu' => currentBackMenu(auth()->user()),
 //            'products' => $products,

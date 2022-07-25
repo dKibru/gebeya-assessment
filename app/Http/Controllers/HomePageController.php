@@ -11,7 +11,7 @@ class HomePageController extends Controller
 {
     public function index()
     {
-        $products = Product::paginate();
+        $products = Product::orderByDesc('id')->paginate();
         return Inertia::render('Home', [
             'products' => $products,
         ]);

@@ -13,9 +13,9 @@
                 <table class="w-full whitespace-no-wrap">
                     <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left uppercase bg-gray-200">
-                        <th class="px-3 py-3" width="400">Client</th>
-                        <th class="px-3 py-3">Amount</th>
-                        <th class="px-3 py-3">Status</th>
+                        <th class="px-3 py-3" width="400">Name</th>
+                        <th class="px-3 py-3">Price</th>
+                        <th class="px-3 py-3">Categories</th>
                         <th class="px-3 py-3">Date</th>
                         <th class="px-3 py-3 text-right" width="100">Manage</th>
                     </tr>
@@ -30,16 +30,16 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">{{c.name}}</p>
-                                    <p class="text-sm text-gray-500"> UX Designer </p>
+                                    <p class="text-sm text-gray-500"> Store : {{c.client.name}} </p>
                                 </div>
                             </div>
                         </td>
                         <td class="px-3 py-3">
-                            $ 4000.00
+                            $ {{c.price/100}}
                         </td>
                         <td class="px-3 py-3">
-              <span class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
-                Approved
+              <span v-if="c.category" class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+                {{c.category.name}}
               </span>
                         </td>
                         <td class="px-3 py-3">

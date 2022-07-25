@@ -25,8 +25,17 @@ Route::middleware(['auth', 'role:client,admin'])->group(function(){
 
     Route::middleware('role:client')->group(function(){
         Route::get('/client/categories', [\App\Http\Controllers\Client\CategoryController::class, 'index']);
+        Route::get('/client/categories/create', [\App\Http\Controllers\Client\CategoryController::class, 'create']);
+        Route::post('/client/categories', [\App\Http\Controllers\Client\CategoryController::class, 'store']);
+
         Route::get('/client/products', [\App\Http\Controllers\Client\ProductController::class, 'index']);
+        Route::post('/client/products', [\App\Http\Controllers\Client\ProductController::class, 'store']);
+        Route::get('/client/products/create', [\App\Http\Controllers\Client\ProductController::class, 'create']);
+
         Route::get('/client/orders', [\App\Http\Controllers\Client\OrderController::class, 'index']);
+        Route::get('/client/orders/{id}', [\App\Http\Controllers\Client\OrderController::class, 'show']);
+        Route::post('/client/order/{id}/complete', [\App\Http\Controllers\Client\OrderController::class, 'complete']);
+        Route::post('/client/order/{id}/cancel', [\App\Http\Controllers\Client\OrderController::class, 'cancel']);
     });
 
     Route::middleware('role:admin')->group(function(){

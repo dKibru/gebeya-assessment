@@ -4,9 +4,9 @@
 
             <h1 class="mb-4 text-xl md:text-2xl font-semibold text-black">
                 Product
-                <button class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
+                <Link href="/client/products/create" class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
                     <i class="fa fa-plus-circle"></i>
-                </button>
+                </Link>
             </h1>
 
 
@@ -16,9 +16,9 @@
                 <table class="w-full whitespace-no-wrap">
                     <thead>
                     <tr class="text-xs font-semibold tracking-wide text-left uppercase bg-gray-200">
-                        <th class="px-3 py-3" width="400">Client</th>
-                        <th class="px-3 py-3">Amount</th>
-                        <th class="px-3 py-3">Status</th>
+                        <th class="px-3 py-3" width="400">Name</th>
+                        <th class="px-3 py-3">Price</th>
+                        <th class="px-3 py-3">Categories</th>
                         <th class="px-3 py-3">Date</th>
                         <th class="px-3 py-3 text-right" width="100">Manage</th>
                     </tr>
@@ -33,16 +33,16 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">{{c.name}}</p>
-                                    <p class="text-sm text-gray-500"> UX Designer </p>
+                                    <p class="text-sm text-gray-500"> Qtty : {{c.qtty}} </p>
                                 </div>
                             </div>
                         </td>
                         <td class="px-3 py-3">
-                            $ 4000.00
+                            $ {{c.price/100}}
                         </td>
                         <td class="px-3 py-3">
-              <span class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
-                Approved
+              <span v-if="c.category" class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+                {{c.category.name}}
               </span>
                         </td>
                         <td class="px-3 py-3">
@@ -55,8 +55,8 @@
                             <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
                                 <i class="fa fa-pen"></i>
                             </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
-                                <i class="fa fa-ellipsis-h"></i>
+                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" :href="c.url" target="_blank">
+                                <i class="fa fa-eye"></i>
                             </a>
                         </td>
                     </tr>
@@ -74,10 +74,12 @@
 
 <script>
     import BackLayout from "../../components/BackLayout.vue";
+    import { Link } from '@inertiajs/inertia-vue3'
     export default {
         name: "ClientProduct",
         components : {
-            BackLayout
+            BackLayout,
+            Link
         },
         props : {
             menu : Array,

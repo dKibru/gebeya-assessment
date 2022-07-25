@@ -19,6 +19,7 @@
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
         "@mahdikhashan/vue3-click-outside": "^0.1.2",
+        "@vueform/multiselect": "^2.5.2",
         "element-plus": "^2.2.10",
         "unplugin-auto-import": "^0.10.0",
         "unplugin-vue-components": "^0.21.1",

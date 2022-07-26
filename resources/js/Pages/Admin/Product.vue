@@ -73,6 +73,7 @@
 
 <script>
     import BackLayout from "../../components/BackLayout.vue";
+
     export default {
         name: "AdminProduct",
         components : {

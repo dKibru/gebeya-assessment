@@ -74,6 +74,8 @@
                 </div>
             </header>
 
+            <notifications />
+
             <slot></slot>
         </main>
     </div>

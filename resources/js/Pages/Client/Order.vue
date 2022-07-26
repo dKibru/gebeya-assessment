@@ -30,7 +30,7 @@
                                 </div>
                                 <div>
                                     <p class="font-semibold">#{{c.id}}</p>
-                                    <p class="text-sm text-gray-500"> {{c.created_at}} </p>
+                                    <p class="text-sm text-gray-500"> {{c.fdates.created_at}} </p>
                                 </div>
                             </Link>
                         </td>

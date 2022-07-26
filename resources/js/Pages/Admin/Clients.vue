@@ -47,7 +47,7 @@
               </span>
                         </td>
                         <td class="px-3 py-3">
-                            {{c.created_at}}
+                            {{c.fdates.created_at}}
                         </td>
                         <td class="px-3 py-3 flex justify-end gap-1">
                             <Link method="POST"  :href="'/admin/client/'+c.id+'/delete'" title="deactivate store" class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600">

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BeatutifulDates;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -9,7 +10,7 @@ use Illuminate\Support\Str;
 
 class Product extends Model
 {
-    use HasFactory;
+    use HasFactory, BeatutifulDates;
 
     protected $fillable = [
         'name', 'slug', 'price',
@@ -18,8 +19,6 @@ class Product extends Model
 
     protected function url(): Attribute
     {
-
-
         return Attribute::make(
             get: function ($value, $attributes){
                 $url = route('product.show2',['client_id' => $this->client->slug, 'product_id' => $this->slug ]);
@@ -30,10 +29,32 @@ class Product extends Model
         );
     }
 
-    protected $appends = ['url'];
+    protected function urls(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value, $attributes){
+                $urls = [];
+                foreach ($this->categories as $c){
+                    $urls[] = route('product.show',['client_id' => $this->client->slug, 'category_id' => $c->slug , 'product_id' => $this->slug ]);
+                }
+                if(sizeof($urls) == 0){
+                    $urls[] = route('product.show2',['client_id' => $this->client->slug, 'product_id' => $this->slug ]);
+                }
+
+                return $urls;
+            }
+        );
+    }
+
+    protected $appends = ['url', 'urls', 'fdates'];
 
     public function category(){
         return $this->belongsTo(Category::class,  'category_id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class, 'product_category');
     }
 
     public function client(){

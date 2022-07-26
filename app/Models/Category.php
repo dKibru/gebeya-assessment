@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\BeatutifulDates;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Illuminate\Support\Str;
 
 class Category extends Model
 {
-    use HasFactory;
+    use HasFactory, BeatutifulDates;
 
     protected $fillable = [
         'name', 'slug', 'parent_id',
@@ -24,8 +25,9 @@ class Category extends Model
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
-    public function products(){
-        return $this->hasMany(Product::class,  'category_id');
+    public function products()
+    {
+        return $this->belongsToMany(Product::class, 'product_category');
     }
 
     public function client()
@@ -43,7 +45,9 @@ class Category extends Model
         );
     }
 
-    protected $appends = ['url'];
+
+
+    protected $appends = ['url', 'fdates'];
 
     public static function boot()
     {

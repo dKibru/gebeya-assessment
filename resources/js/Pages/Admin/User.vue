@@ -4,9 +4,9 @@
 
             <h1 class="mb-4 text-xl md:text-2xl font-semibold text-black">
                 Users
-                <button class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">
-                    <i class="fa fa-plus-circle"></i>
-                </button>
+<!--                <button class=" text-left px-4 py-2 md:text-sm text-black mx-8 bg-yellow-400 border border-transparent rounded-md hover:bg-yellow-500">-->
+<!--                    <i class="fa fa-plus-circle"></i>-->
+<!--                </button>-->
             </h1>
 
 
@@ -39,15 +39,15 @@
                             {{c.fdates.created_at}}
                         </td>
                         <td class="px-3 py-3 flex justify-end gap-1">
-                            <a class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600" href="#">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
-                                <i class="fa fa-pen"></i>
-                            </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </a>
+<!--                            <a class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600" href="#">-->
+<!--                                <i class="fa fa-trash"></i>-->
+<!--                            </a>-->
+<!--                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">-->
+<!--                                <i class="fa fa-pen"></i>-->
+<!--                            </a>-->
+<!--                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">-->
+<!--                                <i class="fa fa-ellipsis-h"></i>-->
+<!--                            </a>-->
                         </td>
                     </tr>
 

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Traits\BeatutifulDates;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -45,6 +46,12 @@ class Product extends Model
             }
         );
     }
+
+//    public function scopeCategory (Builder $query, $name) {
+//        return $query->whereHas('categories', function ($q) use ($name) {
+//            $q->where('name', $name);
+//        });
+//    }
 
     protected $appends = ['url', 'urls', 'fdates'];
 

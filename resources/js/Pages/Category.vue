@@ -186,7 +186,7 @@
                             <div v-for="product in products.data">
                                 <!-- COMPONENT: PRODUCT CARD -->
                                 <article class="mb-4">
-                                    <Link :href="product.url" class="rounded  bg-gray-100 border border-gray-200 block relative p-1 hover:border-blue-300">
+                                    <Link :href="product.urls[0]" class="rounded  bg-gray-100 border border-gray-200 block relative p-1 hover:border-blue-300">
                                         <img :src=product.img class="mx-auto mix-blend-multiply w-auto" height="240" alt="Product title here">
                                     </Link>
                                     <div class="pt-3">
@@ -195,7 +195,7 @@
 <!--                                    </span>-->
                                         <p class="font-semibold">${{product.price/100}}</p>
                                         <h6>
-                                            <a :href="product.url" class="text-gray-600 hover:text-blue-500">
+                                            <a :href="product.urls[0]" class="text-gray-600 hover:text-blue-500">
                                                 {{product.name}}
                                             </a>
                                         </h6>

@@ -15,9 +15,15 @@ class ProductController extends Controller
     {
         $client = User::where('slug', $client_id)->first();
         $category = null;
-        if($category_id)
-            $category = Category::where(['slug' => $category_id, 'client_id' => $client->id])->first();
-        $product = Product::where(['category_id' => $category->id ?? null, 'slug' => $product_id ])->firstOrFail();
+
+        $product = Product::where([ 'slug' => $product_id ])->firstOrFail();
+        if($category_id){
+            $category = Category::where(['slug' => $category_id, 'client_id' => $client->id])->firstOrFail();
+            if(!$product->categories->contains($category->id)){
+                abort(404);
+            }
+        }
+
         $other = Product::where(['client_id' => $client->id])->take(3)->get();
 //        return view('public.product', ['product' => $product, 'other' => $other]);
         $breadcrumb = [];

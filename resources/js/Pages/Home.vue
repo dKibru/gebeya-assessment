@@ -31,18 +31,18 @@
                             </a>
 
                             <div class="hidden md:block px-6 py-4 border border-gray-200 bg-white rounded shadow-sm">
-                                <h3 class="font-semibold mb-2">Category  </h3>
+<!--                                <h3 class="font-semibold mb-2">Category  </h3>-->
 
-                                <ul class="text-gray-500 space-y-1">
-                                    <li v-for="m in categories">
-                                        <label class="flex items-center">
-                                            <input v-model="filterCategories" :value="m.id" type="checkbox"  class="h-4 w-4">
-                                            <span class="ml-2 text-gray-500"> {{m.name}} </span>
-                                        </label>
-                                    </li>
-                                </ul>
+<!--                                <ul class="text-gray-500 space-y-1">-->
+<!--                                    <li v-for="m in categories">-->
+<!--                                        <label class="flex items-center">-->
+<!--                                            <input v-model="filterCategories" :value="m.id" type="checkbox"  class="h-4 w-4">-->
+<!--                                            <span class="ml-2 text-gray-500"> {{m.name}} </span>-->
+<!--                                        </label>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
 
-                                <hr class="my-4">
+<!--                                <hr class="my-4">-->
 
                                 <h3 class="font-semibold mb-2">Price range</h3>
                                 <ul class="space-y-1">
@@ -102,8 +102,8 @@
                                 <div v-for="product in products.data">
                                     <!-- COMPONENT: PRODUCT CARD -->
                                     <article class="mb-4">
-                                        <Link :href="product.url" class="rounded  bg-gray-100 border border-gray-200 block relative p-1 hover:border-blue-300">
-                                            <img :src=product.img class="mx-auto mix-blend-multiply w-auto" height="240" alt="Product title here">
+                                        <Link :href="product.urls[0]" class="rounded  bg-gray-100  border border-gray-200 block relative p-1 hover:border-blue-300">
+                                            <img :src=product.img class="mx-auto mix-blend-multiply w-auto " height="240" alt="Product title here">
                                         </Link>
                                         <div class="pt-3">
                                             <!--                                    <span v-on:click="addToMyCart(product)" class="cursor-pointer float-right px-3 py-2 text-gray-400 border border-gray-300 rounded-md hover:border-blue-400 hover:text-blue-600" >-->
@@ -111,7 +111,7 @@
                                             <!--                                    </span>-->
                                             <p class="font-semibold">${{product.price/100}}</p>
                                             <h6>
-                                                <a :href="product.url" class="text-gray-600 hover:text-blue-500">
+                                                <a :href="product.urls[0]" class="text-gray-600 hover:text-blue-500">
                                                     {{product.name}}
                                                 </a>
                                             </h6>
@@ -177,7 +177,7 @@
 
         methods: {
             filterRequest : function(){
-              this.$inertia.post('/', {
+              this.$inertia.post(this.client ? '/'+this.client.slug :'/', {
                   categories : this.filterCategories,
                   min_price : this.min_price,
                   max_price : this.max_price,

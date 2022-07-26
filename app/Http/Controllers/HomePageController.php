@@ -51,27 +51,29 @@ class HomePageController extends Controller
         return Inertia::render('Home', [
             'products' => $products,
             'client' => $u,
-            'menu' => currentMenu($u->id)
+            'menu' => currentMenu($u->id),
+            'categories' => $u->categories
         ]);
-//        $products = Product::orderByDesc('id')->with('client', 'category');
-//        if($id) $products = $products->where('client_id', $id);
-//        $products = $products->take(15)->get();
-//        if(request()->get('category')){
-//            $cat = Category::where(['slug' => request()->get('category'), 'show_on_navbar' => true] )->first();
-//            $products = $cat->products;
-//        }
-//        $categories = Category::where(['parent_id' => null, 'show_on_navbar' => true])->get();
-//        return view('public.index', compact('products','categories','id'));
     }
 
     public function filter_home($id)
     {
+        $request = request();
         $u = User::where('slug', $id)->firstOrFail();
         $categories = Category::where([ 'client_id' => $u->id,  'show_on_navbar' =>true ])->get();
-        $products = Product::where('client_id', $u->id)->orderByDesc('id');
+        $products = Product::where('client_id', $u->id)->with('categories')->orderByDesc('id');
 
         if(isset($request['categories']) && sizeof($request['categories']) ){
-            $products = $products->whereIn('category_id', $request['categories']);
+            foreach ($request['categories'] as $c){
+                $category_products = Category::find($c)->products->pluck('id')->values();
+                dd($category_products);
+                $products = $products->whereHas('categories', function($query) use($c){
+                    dd($query);
+                    $query->where->categories->contains($c);
+                });
+//                dd($products->first()->toArray(), $products->categories);
+//                $products = $products->categories()->contains($c);
+            }
         }
         if(isset($request['min_price']) && $request['min_price'] ){
             $products = $products->where('price', '>' , $request['min_price']*100);
@@ -82,7 +84,9 @@ class HomePageController extends Controller
 
         return Inertia::render('Home', [
             'products' => $products->paginate(),
-            'categories' => $categories
+            'categories' => $categories,
+            'menu' => $u ? currentMenu($u->id) : [],
+            'client' => $u,
         ]);
 
     }

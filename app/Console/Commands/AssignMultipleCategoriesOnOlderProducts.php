@@ -38,7 +38,8 @@ class AssignMultipleCategoriesOnOlderProducts extends Command
             $category_id = $product->category_id;
             $product_id = $product->id;
             $client_id = $product->client_id;
-            $product->categories()->attach( [$category_id] );
+            if($category_id)
+                $product->categories()->sync( [$category_id] );
 
         }
         return 0;

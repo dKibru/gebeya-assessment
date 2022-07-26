@@ -50,12 +50,12 @@
                             {{c.fdates.created_at}}
                         </td>
                         <td class="px-3 py-3 flex justify-end gap-1">
-                            <Link method="POST"  :href="'/admin/client/'+c.id+'/delete'" title="deactivate store" class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600">
+                            <div v-on:click="deleteUser(c.id)" title="deactivate store" class="cursor-pointer px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600">
                                 <i class="fa fa-trash"></i>
-                            </Link>
-<!--                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">-->
+                            </div>
+<!--                            <div v-on:click="deleteUser(c.id)" class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600 cursor-pointer" >-->
 <!--                                <i class="fa fa-pen"></i>-->
-<!--                            </a>-->
+<!--                            </div>-->
                             <Link target="_blank" :href="c.url"  title="view front store"  class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" >
                                 <i class="fa fa-eye"></i>
                             </Link>
@@ -79,6 +79,7 @@
 <script>
     import BackLayout from "../../components/BackLayout.vue";
     import { Link } from '@inertiajs/inertia-vue3'
+
     export default {
         name: "AdminClients",
         components : {
@@ -88,6 +89,33 @@
         props : {
             menu : Array,
             clients : Array
+        },
+        methods: {
+            deleteUser : function(id){
+
+                if (window.confirm('Are you sure?'))
+                {
+                    this.$inertia.post('/admin/client/'+id+'/delete', {
+
+                    }, {
+                        onSuccess: () => {
+                            this.$notify({
+                                title: "Client deleted",
+                                text: "All data related to the client are removed from our server",
+                            })
+                        }
+                    })
+                    //
+
+                }
+                else
+                {
+                    // They clicked no
+                }
+                // this.$alert("Are you sure?").then(() => {
+                //     //do something...
+                // });
+            }
         }
     }
 </script>

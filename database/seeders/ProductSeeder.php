@@ -17,16 +17,19 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->getOutput()->writeln("<info>...</info>");
+//        $this->command->getOutput()->writeln("<info>...</info>");
         Product::truncate();
-        $this->command->getOutput()->writeln("<info>Users data cleared</info>");
+//        $this->command->getOutput()->writeln("<info>Users data cleared</info>");
         $json = File::get("database/data/products.json");
         $records = json_decode($json);
 
         foreach ($records as $key => $value) {
-            Product::create([
-                "category_id" => $value->category_id, "name" => $value->name,  "price" => $value->price * 100, "qtty" => $value->qtty , "img" => $value->img, "client_id" => $value->client_id
+            $p = Product::create([
+                 "name" => $value->name,  "price" => $value->price * 100, "qtty" => $value->qtty , "img" => $value->img, "client_id" => $value->client_id
             ]);
+
+            $p->categories()->sync([$value->category_id]);
+
         }
     }
 }

@@ -16,9 +16,9 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $this->command->getOutput()->writeln("<info>...</info>");
+//        $this->command->getOutput()->writeln("<info>...</info>");
         User::truncate();
-        $this->command->getOutput()->writeln("<info>Users data cleared</info>");
+//        $this->command->getOutput()->writeln("<info>Users data cleared</info>");
         $json = File::get("database/data/users.json");
         $records = json_decode($json);
 

@@ -38,23 +38,25 @@
                             $ {{c.price/100}}
                         </td>
                         <td class="px-3 py-3">
-              <span v-if="c.category" class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
-                {{c.category.name}}
-              </span>
+                            <div v-if="c.categories.length">
+                              <span v-for="cc in c.categories" class="px-2 py-1 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+                                {{cc.name}}
+                              </span>
+                            </div>
                         </td>
                         <td class="px-3 py-3">
                             {{c.created_at}}
                         </td>
                         <td class="px-3 py-3 flex justify-end gap-1">
-                            <a class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600" href="#">
-                                <i class="fa fa-trash"></i>
-                            </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
-                                <i class="fa fa-pen"></i>
-                            </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </a>
+<!--                            <a class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600" href="#">-->
+<!--                                <i class="fa fa-trash"></i>-->
+<!--                            </a>-->
+<!--                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">-->
+<!--                                <i class="fa fa-pen"></i>-->
+<!--                            </a>-->
+<!--                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">-->
+<!--                                <i class="fa fa-ellipsis-h"></i>-->
+<!--                            </a>-->
                         </td>
                     </tr>
 

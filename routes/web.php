@@ -32,6 +32,8 @@ Route::middleware(['auth', 'role:client,admin'])->group(function(){
 
         Route::get('/client/products', [\App\Http\Controllers\Client\ProductController::class, 'index']);
         Route::post('/client/products', [\App\Http\Controllers\Client\ProductController::class, 'store']);
+        Route::get('/client/products/{id}/edit', [\App\Http\Controllers\Client\ProductController::class, 'edit']);
+        Route::post('/client/products/{id}/update', [\App\Http\Controllers\Client\ProductController::class, 'update']);
         Route::get('/client/products/create', [\App\Http\Controllers\Client\ProductController::class, 'create']);
 
         Route::get('/client/orders', [\App\Http\Controllers\Client\OrderController::class, 'index']);

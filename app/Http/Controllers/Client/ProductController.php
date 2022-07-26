@@ -36,10 +36,6 @@ class ProductController
                     'value' => $c->id, 'name' => $c->name
                 ];
             })
-//            'products' => $products,
-//            'products' => $clients,
-//            'menu' => currentMenu($client->id),
-//            'breadcrumb' => $breadcrumb
         ]);
     }
 
@@ -51,7 +47,6 @@ class ProductController
             'name' => 'required',
             'price' => 'required',
             'qtty' => 'required',
-//            'categories' => 'required'
         ]);
 
         $img = $request->file('pic')->storePublicly('products');
@@ -64,6 +59,50 @@ class ProductController
             ]);
             if($request['categories'])
                 $p->categories()->attach( array_values($request['categories']));
+
+        });
+
+        return redirect()->to(url('/client/products'));
+    }
+
+    public function edit($id)
+    {
+        $client = currentClient();
+        $categories = \App\Models\Category::where('client_id', $client->id)->get();
+        $product = Product::find($id);
+        return Inertia::render('Client/ProductEdit', [
+            'product' => $product,
+            'menu' => currentBackMenu($client),
+            'categories' => $categories->map(function($c){
+                return [
+                    'value' => $c->id, 'name' => $c->name
+                ];
+            })
+        ]);
+    }
+
+    public function update($id, Request $request)
+    {
+        $client = currentClient();
+        $product = Product::find($id);
+        $request->validate([
+//            'pic' => 'required',
+            'name' => 'required',
+            'price' => 'required',
+            'qtty' => 'required',
+        ]);
+        $img = null;
+        if($request->file('pic'))
+            $img = $request->file('pic')->storePublicly('products');
+        \DB::transaction(function() use($request, $img, $client, $product){
+            $product->name = $request['name'];
+            $product->price = $request['price'] * 100;
+            $product->qtty = $request['qtty'];
+            $product->save();
+            if($img)
+                $product->img = route('media',['path' => $img]);
+            if($request['categories'])
+                $product->categories()->sync( array_values($request['categories']));
 
         });
 

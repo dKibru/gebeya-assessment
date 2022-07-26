@@ -54,9 +54,9 @@
                             <a class="px-2 py-1 inline-block text-red-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-red-600" href="#">
                                 <i class="fa fa-trash"></i>
                             </a>
-                            <a class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" href="#">
+                            <Link class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" :href="'/client/products/'+c.id+'/edit'">
                                 <i class="fa fa-pen"></i>
-                            </a>
+                            </Link>
                             <a v-for="url in c.urls" class="px-2 py-1 inline-block text-gray-500 bg-white shadow-sm border border-gray-200 rounded-md hover:bg-gray-100 hover:text-blue-600" :href="url" target="_blank">
                                 <i class="fa fa-eye"></i>
                             </a>
